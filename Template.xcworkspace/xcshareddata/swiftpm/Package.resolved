@@ -1,0 +1,122 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
+      "identity" : "instabug-sp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Instabug/Instabug-SP",
+      "state" : {
+        "branch" : "support_modern_swift_concurrency_apis_spm",
+        "revision" : "683ced1cf4d02c8606738099324210a6ffb9b4d5"
+      }
+    },
+    {
+      "identity" : "keychainaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/KeychainAccess",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ecb18d8ce4d88277cc4fb103973352d91e18c535"
+      }
+    },
+    {
+      "identity" : "nuke",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kean/Nuke",
+      "state" : {
+        "revision" : "4625c73ea00a9fb4b4f3e28d95d0021a44af7e59",
+        "version" : "12.5.0"
+      }
+    },
+    {
+      "identity" : "papyrus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/joshuawright11/papyrus",
+      "state" : {
+        "revision" : "6f42d93a0c9fdff4e9a07976488aba0f5f3bcccb",
+        "version" : "0.6.7"
+      }
+    },
+    {
+      "identity" : "publicinitialisermacro",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lutes1/PublicInitialiserMacro",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b236abdc512b420c4f08fc29245b656f6decebba"
+      }
+    },
+    {
+      "identity" : "semaphore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/groue/Semaphore.git",
+      "state" : {
+        "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
+        "version" : "0.0.8"
+      }
+    },
+    {
+      "identity" : "swift-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-algorithms.git",
+      "state" : {
+        "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections.git",
+      "state" : {
+        "revision" : "d029d9d39c87bed85b1c50adee7c41795261a192",
+        "version" : "1.0.6"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
+        "version" : "509.0.2"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject",
+      "state" : {
+        "revision" : "463cb2d659c8ae34899d18057ea5b1bb86fc3178",
+        "version" : "2.8.4"
+      }
+    },
+    {
+      "identity" : "swinjectautoregistration",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/SwinjectAutoregistration",
+      "state" : {
+        "revision" : "2f37415084584d0aa97007e43eb7a2498ccf770e",
+        "version" : "2.8.3"
+      }
+    }
+  ],
+  "version" : 2
+}

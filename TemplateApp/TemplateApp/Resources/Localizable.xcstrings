@@ -1,0 +1,41 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld days" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld day"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld days"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Done" : {
+
+    },
+    "Environment Settings" : {
+
+    },
+    "Later" : {
+
+    },
+    "Update Now" : {
+
+    }
+  },
+  "version" : "1.0"
+}
