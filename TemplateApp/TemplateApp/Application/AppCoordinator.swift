@@ -27,12 +27,18 @@ class AppCoordinator: ApplicationCoordinatorProtocol {
     func start() -> UINavigationController {
         _rootNavigationController = UINavigationController()
         
-        let homeViewModel = DIContainer.shared.resolve(HomeViewModelProtocol.self)
-        let homePageViewController = GenericSUIViewController(rootView: HomePageView(viewModel: homeViewModel))
-        _rootNavigationController.setViewControllers([homePageViewController], animated: false)
+        let moviesViewModel = DIContainer.shared.resolve(MoviesViewModelProtocol.self)
+        moviesViewModel.initialize(actions: self)
+        let moviesViewController = GenericSUIViewController(
+            rootView: MoviesPageView(
+                viewModel: moviesViewModel
+            )
+        )
+        
+        _rootNavigationController.setViewControllers([moviesViewController], animated: false)
         return _rootNavigationController
     }
-    
+
     func showUpdateDialogue(model: AppUpdateDialogModel) {
         let view = AppUpdateDialog(model: model) { [weak self] in
             guard let self else { return }
@@ -45,5 +51,29 @@ class AppCoordinator: ApplicationCoordinatorProtocol {
         vc.modalTransitionStyle = .crossDissolve
         
         _rootNavigationController.present(vc, animated: true)
+    }
+}
+
+extension AppCoordinator: MoviesPageActionsProtocol {
+    func showMovieDetails(movie: Movie) {
+        let movieDetailsViewModel = DIContainer.shared.resolve(MovieDetailsViewModelProtocol.self)
+        movieDetailsViewModel.initialize(actions: self, movie: movie)
+        let movieDetailsViewController = GenericSUIViewController(
+            rootView: MovieDetails(
+                viewModel: movieDetailsViewModel
+            )
+        )
+        
+        _rootNavigationController.pushViewController(movieDetailsViewController, animated: true)
+    }
+}
+
+extension AppCoordinator: MovieDetailsPageActionsProtocol {
+    func openFullResolutionImage(url: String) {
+        let movieDetailsViewController = GenericSUIViewController(
+            rootView: MoviePosterViewerPage(posterPath: url)
+        )
+        
+        _rootNavigationController.present(movieDetailsViewController, animated: true)
     }
 }

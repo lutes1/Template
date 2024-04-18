@@ -21,6 +21,10 @@ public class CoreSetup: RegistererProtocol {
             with: EnvironmentSettingsViewModelMock.init
         )
         
-        container.register(HomeViewModelProtocol.self, with: HomeViewModel.init)
+        container.register(MoviesViewModelProtocol.self, with: MoviesViewModel.init)
+        container.registerMock(MoviesViewModelProtocol.self, with: MoviesViewModelMock.init)
+        
+        container.register(MovieDetailsViewModelProtocol.self, with: MovieDetailsViewModel.init)
+        container.registerMock(MovieDetailsViewModelProtocol.self, with: MovieDetailsViewModelMock.init)
     }
 }

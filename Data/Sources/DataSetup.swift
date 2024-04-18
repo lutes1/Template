@@ -27,20 +27,23 @@ public class DataSetup: RegistererProtocol {
     }
     
     private func _registerApis(in container: DIContainer) {
+        container.register(AuthorizationInterceptor.self, with: AuthorizationInterceptor.init)
         container.register(Provider.self, factory: _initializeNetworkProvider)
         container.register(AppUpdateApiProtocol.self, with: AppUpdateApiProtocolAPI.init, scope: .singleton)
+        container.register(MoviesApiProtocol.self, with: MoviesApiProtocolAPI.init, scope: .singleton)
     }
     
     private func _initializeNetworkProvider(resolver: DIResolver) -> Provider {
         let environmentService = resolver.resolve(EnvironmentServiceProtocol.self)
-        let baseUrl = environmentService.getSelectedEnvironment().baseUrl
+        let authorizationInterceptor = resolver.resolve(AuthorizationInterceptor.self)
         
+        let baseUrl = environmentService.getSelectedEnvironment().baseUrl
         let urlSession = URLSession.shared
         urlSession.configuration.waitsForConnectivity = true
         urlSession.configuration.timeoutIntervalForRequest = 60
         urlSession.configuration.timeoutIntervalForResource = 60 * 60
         
-        return Provider(baseURL: baseUrl, urlSession: urlSession)
+        return Provider(baseURL: baseUrl, urlSession: urlSession, interceptors: [authorizationInterceptor])
     }
     
     private func _registerNetworkErrorServices(in container: DIContainer) {
@@ -66,6 +69,7 @@ public class DataSetup: RegistererProtocol {
 
     private func _registerRepositories(in container: DIContainer) {
         container.register(AppUpdateRepositoryProtocol.self, with: AppUpdateRepository.init, scope: .singleton)
+        container.register(MoviesRepositoryProtocol.self, with: MoviesRepository.init, scope: .singleton)
     }
     
     private func _checkFirstLaunch(_ container: DIContainer) {

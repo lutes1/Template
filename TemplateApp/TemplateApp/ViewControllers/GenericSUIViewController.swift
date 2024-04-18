@@ -33,7 +33,7 @@ class GenericSUIViewController<Content: View>: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _hostingController.view.backgroundColor = .clear
+        _hostingController.view.backgroundColor = .white
         
         addChild(_hostingController)
         view.addSubview(_hostingController.view)

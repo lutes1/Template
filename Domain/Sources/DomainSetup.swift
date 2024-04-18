@@ -13,5 +13,6 @@ import PublicInitialiserMacro
 public class DomainSetup : RegistererProtocol {
     public func setup(with container: DIContainer) {
         DIContainer.shared.register(AppUpdateUseCaseProtocol.self, with: AppUpdateUseCase.init, scope: .singleton)
+        DIContainer.shared.register(MoviesUseCasesProtocol.self, with: MoviesUseCases.init, scope: .singleton)
     }
 }

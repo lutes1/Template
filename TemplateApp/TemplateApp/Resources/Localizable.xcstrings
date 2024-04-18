@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "(Votes %lld)" : {
+
+    },
     "%lld days" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -31,6 +34,24 @@
 
     },
     "Later" : {
+
+    },
+    "No movie was found for the searched term %@" : {
+
+    },
+    "Overview" : {
+
+    },
+    "Popularity" : {
+
+    },
+    "Rating" : {
+
+    },
+    "Release date: %@" : {
+
+    },
+    "Search..." : {
 
     },
     "Update Now" : {

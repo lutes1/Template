@@ -14,5 +14,5 @@ class EnvironmentUrls {
     
     static let stage = ""
     
-    static let dev = ""
+    static let dev = "https://api.themoviedb.org/3/"
 }
