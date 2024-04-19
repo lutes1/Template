@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  AppUpdateRepository.swift
 //  
 //
 //  Created by Petru Lutenco on 27.03.2024.

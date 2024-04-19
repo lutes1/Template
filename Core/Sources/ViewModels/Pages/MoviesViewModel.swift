@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  MoviesViewModel.swift
 //
 //
 //  Created by Petru Lutenco on 11.04.2024.

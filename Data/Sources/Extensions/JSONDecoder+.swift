@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  JSONDecoder.swift
+//
 //
 //  Created by Petru Lutenco on 15.04.2024.
 //
@@ -15,8 +15,8 @@ extension JSONDecoder {
     }
 }
 
-extension DateFormatter {
-    public static var apiFormatter: DateFormatter {
+fileprivate extension DateFormatter {
+    static var apiFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = TimeZone(abbreviation: "UTC")

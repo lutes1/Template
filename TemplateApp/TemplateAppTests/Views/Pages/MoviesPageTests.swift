@@ -1,36 +1,53 @@
 //
-//  MoviesViewModelMock.swift
-//  Core
+//  MoviesPageTests.swift
+//  TemplateAppTests
 //
-//  Created by vadim josan on 27.11.2023.
+//  Created by Petru Lutenco on 18.04.2024.
 //
 
-import Foundation
+import XCTest
+@testable import TemplateApp
+import Core
 import Domain
+import ViewInspector
+import SwiftUI
 
-class MoviesViewModelMock: MoviesViewModelProtocol {
-    func initialize(actions: any MoviesPageActionsProtocol) {
+final class MoviesPageTests: XCTestCase {
+    func test() throws {
+        
+        // Arrange
+        let viewModel = MoviesViewModelMock()
+        viewModel.mode = .discover
+        
+        let sut = MoviesPage(viewModel: viewModel)
+        
+        // Act
+        try sut.inspect().view(MoviesPage.self).vStack().textField(0).setInput("Avengers")
+        
+        // Assert
+        XCTAssertEqual(viewModel.query, "Avengers")
     }
-    
+}
+
+fileprivate class MoviesViewModelMock: MoviesViewModelProtocol {
+    var query: String = ""
     var mode: MoviesPageMode = .discover
+    var pageState: PageState = .ready
+    let title: String = "This is a mocked title!"
+    
+    func initialize(actions: MoviesPageActionsProtocol) { }
     
     var items: [Domain.Movie] = try! JSONDecoder.apiDateDecoder.decode([Movie].self, from: data.data(using: .utf8)!)
     
     var canLoadMoreItems: Bool = true
     
-    func onMovieSelected(movie: Domain.Movie) {
-    }
+    func onMovieSelected(movie: Domain.Movie) { }
     
-    func loadResultsPage() {
-    }
+    func loadResultsPage() { }
     
     func imageUrl(for partialPath: String?) -> URL? {
         URL(string: "https://image.tmdb.org/t/p/original/4QBDAZ8nBfZrplxMaxP7RoR6HXe.jpg")
     }
-    
-    var query: String = ""
-    var pageState: PageState = .ready
-    let title: String = "This is a mocked title!"
     
     private static let data =
     """

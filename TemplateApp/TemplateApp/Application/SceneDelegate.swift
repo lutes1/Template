@@ -34,15 +34,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         _appCoordinator = DIContainer.shared.resolve(AppCoordinator.self)
         return _appCoordinator.start()
     }
-    
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        guard !_wasAppVersionChecked else {
-            return
-        }
-        
-        let appVersionUseCase = DIContainer.shared.resolve(AppUpdateUseCaseProtocol.self)
-        appVersionUseCase.checkAppVersion(appCoordinator: _appCoordinator)
-        
-        _wasAppVersionChecked = true
-    }
 }

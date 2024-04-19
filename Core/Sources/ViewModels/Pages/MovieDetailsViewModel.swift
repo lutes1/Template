@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  MovieDetailsViewModel.swift
+//
 //
 //  Created by Petru Lutenco on 18.04.2024.
 //

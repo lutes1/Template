@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  AuthorizationInterceptor.swift
 //  
 //
 //  Created by Petru Lutenco on 15.04.2024.

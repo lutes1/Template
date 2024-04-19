@@ -1,5 +1,5 @@
 //
-//  HomePage.swift
+//  MoviesPage.swift
 //  Template
 //
 //  Created by Petru Lutenco on 11.04.2024.
@@ -11,7 +11,7 @@ import Shared
 import NukeUI
 import Domain
 
-struct MoviesPageView: View {
+struct MoviesPage: View {
     @State var viewModel: MoviesViewModelProtocol
     @FocusState var _isSearchFocused: Bool
     
@@ -47,13 +47,13 @@ struct MoviesPageView: View {
                 }
             }
             .padding(.horizontal)
+            .tag("searchField")
             
             PageContents(pageState: viewModel.pageState) {
                 if !viewModel.items.isEmpty {
                     List {
                         ForEach(viewModel.items) { item in
                             Button {
-                                print("Tapped")
                                 viewModel.onMovieSelected(movie: item)
                             } label: {
                                 _movieItem(movie: item)
@@ -129,7 +129,7 @@ struct MoviesPageView: View {
 }
 
 #Preview {
-    MoviesPageView(
+    MoviesPage(
         viewModel: DIContainer.shared.resolveMock(
             MoviesViewModelProtocol.self
         )

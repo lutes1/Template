@@ -30,7 +30,7 @@ class AppCoordinator: ApplicationCoordinatorProtocol {
         let moviesViewModel = DIContainer.shared.resolve(MoviesViewModelProtocol.self)
         moviesViewModel.initialize(actions: self)
         let moviesViewController = GenericSUIViewController(
-            rootView: MoviesPageView(
+            rootView: MoviesPage(
                 viewModel: moviesViewModel
             )
         )
