@@ -15,7 +15,7 @@
 
 ## The template includes
 - An end-to-end flow of data from the API to the UI and to the local database
-- Searchable, refreshable and paginated list of __
+- Searchable paginated list of movies (using the [Movie DB API (https://www.themoviedb.org/)] )
 - Example unit tests for every layer from Data to Presentation
 - Loading, error and ready UI states encapsulated in reusable view
 - Modal, toasts and alerts
@@ -30,9 +30,6 @@ KeychainAccess is a simple Swift wrapper for Keychain. Makes using Keychain APIs
 
 #### [Swinject](https://github.com/Swinject/Swinject)
 Swinject is a lightweight dependency injection framework for Swift. It provides a very flexible DIContainer implementation that removes the burden of creating and maintaining instances in the applications.
-
-#### [Realm](https://github.com/realm/realm-swift)
-Realm is the database framework of choice as it has better support for async/await, is faster and overall easier to use.
 
 #### [PublicInitialiserMacro](https://github.com/lutes1/PublicInitialiserMacro)
 Empty public initializer generator
